@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AjaxContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 //     return(view('admin_panel.dashboard'));
 // });
 
-
 // Route::get('/blog-list', function(){
 //     return(view('admin_panel.blog-list'));
 // });
@@ -36,3 +35,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\adminController\HomeController::class, 'index']);
+Route::get('/blog-list', [App\Http\Controllers\adminController\bloglist::class, 'index']);
+Route::get('/addblog', [App\Http\Controllers\adminController\addblogController::class, 'index']);
+Route::post('/add-blog-data', [App\Http\Controllers\adminController\addblogController::class, 'addblog']);
+Route::get ('/addcategory', [App\Http\Controllers\adminController\addcategoryController::class, 'index']);
+Route::post('/addcategory-data', [App\Http\Controllers\adminController\addcategoryController::class, 'add_category']);

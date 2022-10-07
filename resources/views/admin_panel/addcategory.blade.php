@@ -15,11 +15,15 @@
                           </div>
                         </div>
                         <div class="blog-form">
-                          <form action="">
+                          @if(session('success'))
+                          <div class="alert alert-success">{{session('success')}}</div>
+                        @endif
+                          <form action="{{ url('addcategory-data')}}" method="post">
+                            @csrf
                             <div class="form-group form-row">
                                 <label class="col-md-3">Title <span class="required">*</span></label>
                                 <div class="col-md-9">
-                                  <input type="text" class="form-control" placeholder="Title" required>
+                                  <input type="text" name="category" class="form-control" placeholder="Title" required>
                                 </div>
                             </div>
 
