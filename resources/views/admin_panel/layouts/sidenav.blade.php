@@ -5,6 +5,7 @@
             <li><a href="{{('/blog-list')}}">Blogs</a></li>
             <li><a href="{{('/addcategory')}}">Add Categories</a></li>
             <li><a href="{{('/addblog')}}">Add Blog</a></li>
+            <li><a href="{{('/addauthor')}}">Add Author</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </div>   

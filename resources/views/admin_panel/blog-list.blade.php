@@ -17,71 +17,41 @@
                                 <a href="{{('/addblog')}}" class="btn btn-success">Add Post</a>
                             </div>
                         </div>
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped table-responsive">
                             <tr>
                                 <th>#ID</th>
                                 <th>Image</th>
-                                <th>Title</th>
-                                <th>Category</th>
-                                <th>Posted On</th>
+                                <th>Blog Category</th>
+                                <th>Blog Title</th>
+                                <th>Blog Author</th>
+                                <th>Blog Description</th>
+                                <th>Blog Created</th>
                                 <th>Action</th>
                             </tr>
+                            @foreach ($blogData as $blogvalue)
+                                
                             <tr>
-                                <td>1</td>
-                                <td><img src="assets/images/img1.jpg" ></td>
-                                <td>Sample blog post 1</td>
-                                <td>Technology</td>
-                                <td>October 22, 2018</td>
+                                <td>{{$blogvalue->blog_id}}</td>
+                                <td><img src="{{$blogvalue->blog_pic}}"  style="border: solid red 1px;border-radius: 75%;" ></td>
+                                <td>{{$blogvalue->blog_category}}</td>
+                                <td>{{$blogvalue->blog_title}}</td>
+                                <td>{{$blogvalue->blog_author}}</td>
+                                <td>{{$blogvalue->blog_desc}}</td>
+                                <td>{{$blogvalue->created_at}}</td>
                                 <td>
                                     <a href="#" class="btn btn-info btn-sm">Edit</a>
                                     <a href="#" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><img src="assets/images/img2.jpg" ></td>
-                                <td>Sample blog post 2</td>
-                                <td>Business</td>
-                                <td>October 22, 2018</td>
-                                <td>
-                                    <a href="#" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><img src="assets/images/img3.jpg" ></td>
-                                <td>Sample blog post 3</td>
-                                <td>Science</td>
-                                <td>October 22, 2018</td>
-                                <td>
-                                    <a href="#" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><img src="assets/images/img4.jpg" ></td>
-                                <td>Sample blog post 4</td>
-                                <td>Technology</td>
-                                <td>October 22, 2018</td>
-                                <td>
-                                    <a href="#" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><img src="assets/images/img5.jpg" ></td>
-                                <td>Sample blog post 5</td>
-                                <td>Business</td>
-                                <td>October 22, 2018</td>
-                                <td>
-                                    <a href="#" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                </td>
-                            </tr>
+                            @endforeach
+    
                         </table>
+                        <div>{{ $blogData->links() }}</div>
+                        <style>
+                            .w-5 .h-5{
+                                display: none;
+                            }
+                        </style>
                     </div>   
                 </div>
             </div>

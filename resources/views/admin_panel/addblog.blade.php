@@ -80,6 +80,18 @@
                                   <input type="text" name="blog_title" class="form-control" placeholder="Title" required>
                                 </div>
                             </div>
+                            {{-- authorData --}}
+                            <div class="form-group form-row">
+                              <label class="col-md-3">Author Name <span class="required">*</span></label>
+                              <div class="col-md-9">
+                                <select name="authorData" id="" class="form-control">
+                                  <option value="">select author</option>
+                                  @foreach ($authorData as $authorValue)
+                                  <option value="{{ $authorValue->authorName }}">{{ $authorValue->authorName }}</option>
+                                  @endforeach
+                                </select>
+                              </div>
+                          </div>
                             <div class="form-group form-row">
                                 <label class="col-md-3">Blog Author <span class="required">*</span></label>
                                 <div class="col-md-9">
