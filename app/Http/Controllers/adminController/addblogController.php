@@ -51,7 +51,7 @@ class addblogController extends Controller
             // return $request; all data visible
             $blog = new Addblog();
             $blog->blog_category=$request->input('category_name');
-            $blog->authorName=$request->input('authorData');
+            // $blog->authorName=$request->input('authorData');
             $blog->blog_title=$request->input('blog_title');
             $blog->blog_author=$request->input('blog_author');
             $blog->blog_desc=$request->input('blog_desc');

@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// php artisan route:cache    
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -30,7 +32,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/addcategory', function(){
 //     return(view('admin_panel.addcategory'));
-// });
+// }); 
 
 Route::get('/', [App\Http\Controllers\adminController\HomeController::class, 'index']);
 Route::get('/blog-list', [App\Http\Controllers\adminController\bloglist::class, 'index']);
@@ -43,3 +45,7 @@ Route::get('/addcomment', [App\Http\Controllers\adminController\CommentControlle
 Route::post('/addcommentData', [App\Http\Controllers\adminController\CommentController::class, 'add_comment']);
 Route::get('/addauthor', [App\Http\Controllers\adminController\AuthorController::class, 'index']);
 Route::post('/addauthor-data', [App\Http\Controllers\adminController\AuthorController::class, 'addAuthor']);
+
+Route::get('/delete-data/{id}', [App\Http\Controllers\adminController\bloglist::class, 'delete']);
+Route::get('/update-record/{id}', [App\Http\Controllers\adminController\bloglist::class, 'edit']);
+Route::post('/update-blog-data/{id}', [App\Http\Controllers\adminController\bloglist::class, 'update']);
