@@ -5,10 +5,14 @@ namespace App\Http\Controllers\adminController;
 use Illuminate\Http\Request;
 use App\Models\addcategory;
 
+use Illuminate\Support\Facades\DB; // for delete 
+use League\CommonMark\Reference\Reference;
+
 class addcategoryController extends Controller
 { 
     public function index(){
-        return view('admin_panel.addcategory');
+        $categoryData = Addcategory::All() ;
+        return view('admin_panel.addcategory', ['Category_Data_All'=>$categoryData]);
     }
 
     public function add_category(Request $request){
@@ -26,5 +30,14 @@ class addcategoryController extends Controller
     //     // category	"science"
     //    }
 
+    }
+
+    public function delete($id){
+        // For Reference
+            // $deleted = DB::table('addblogs')->where('blog_id', $id)->delete();
+            // return redirect('/blog-list')->with('danger', 'Record Deleted');
+
+        $deleted = DB::table('addcategories')->where('category_id', $id)->delete();
+        return redirect('addcategory')->with('success','Deleted Successfully.' );
     }
 }

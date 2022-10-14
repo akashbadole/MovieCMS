@@ -36,8 +36,20 @@
                           </form>
                         </div>
                     </div>   
+                    <div style="border: 1px solid navyblue;">
+                      <h2>All Category</h2>
+                        <hr>
+                        <ul>
+                        @foreach ($Category_Data_All as $categoryAll)
+                        <li class="mt-4 mb-4">{{$categoryAll->category}} <span><a href="{{url('category-edit')}}" class="btn btn-primary">Edit</a> | <a href="{{url('category-delete/'.$categoryAll->category_id)}}" class="btn btn-danger">Delete</a></span></li>
+
+        
+                        @endforeach
+                      </ul>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>
