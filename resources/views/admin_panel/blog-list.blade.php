@@ -51,8 +51,8 @@
                         </table>
                         <div>{{ $blogData->links() }}</div>
                         <style>
-                            .w-5 .h-5{
-                                display: none;
+                           svg .w-5 .h-5{
+                                display: none !important;
                             }
                         </style>
                     </div>   
