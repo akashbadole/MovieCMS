@@ -40,7 +40,12 @@ class bloglist extends Controller
 
     public function update(Request $req, $id){
         // return $req." ".$id;
-        echo "<pre>";
-        print_r($_POST);
+        // echo "<pre> ";
+        // print_r($_POST);
+
+        $affected = DB::table('addblogs')
+            ->where('blog_id', $id )
+            ->update(['blog_category'=>$req->input('category_name'),'blog_title' =>$req->input('blog_title'), 'blog_author'=>$req->input('blog_author'), 'blog_desc'=>$req->input('blog_desc')]);
+            return redirect('/blog-list')->with('success','Record Updated Successfully');
     }
 }
