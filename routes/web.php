@@ -51,5 +51,7 @@ Route::get('/delete-data/{id}', [App\Http\Controllers\adminController\bloglist::
 Route::get('/update-record/{id}', [App\Http\Controllers\adminController\bloglist::class, 'edit']);
 Route::post('/update-blog-data/{id}', [App\Http\Controllers\adminController\bloglist::class, 'update']);
 
-// for category delete 
+// for addcategory -  category delete 
 Route::get('/category-delete/{id}', [App\Http\Controllers\adminController\addcategoryController::class, 'delete']);
+// for addcategory -  category update
+Route::get('/category-edit/{id}', [App\Http\Controllers\adminController\addcategoryController::class, 'edit']);

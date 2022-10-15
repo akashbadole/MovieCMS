@@ -4,8 +4,10 @@ namespace App\Http\Controllers\adminController;
 
 use Illuminate\Http\Request;
 use App\Models\addcategory;
-
+// for url calling 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB; // for delete 
+ 
 use League\CommonMark\Reference\Reference;
 
 class addcategoryController extends Controller
@@ -38,6 +40,12 @@ class addcategoryController extends Controller
             // return redirect('/blog-list')->with('danger', 'Record Deleted');
 
         $deleted = DB::table('addcategories')->where('category_id', $id)->delete();
-        return redirect('addcategory')->with('success','Deleted Successfully.' );
+        return redirect('addcategory')->with('danger','Deleted Successfully.' );
+    }
+    public function edit($id){
+        // return $id;
+        $categoryData = addcategory::all();
+        $categoryDataAdding = DB::table('addcategories')->where('category_id', $id)->get();
+        return view('admin_panel.editcategory',["allCategory"=>$categoryDataAdding, 'categoryData'=>$categoryData]);
     }
 }
