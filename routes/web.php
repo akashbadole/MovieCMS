@@ -53,5 +53,14 @@ Route::post('/update-blog-data/{id}', [App\Http\Controllers\adminController\blog
 
 // for addcategory -  category delete 
 Route::get('/category-delete/{id}', [App\Http\Controllers\adminController\addcategoryController::class, 'delete']);
-// for addcategory -  category update
+// for addcategory -  category edit
 Route::get('/category-edit/{id}', [App\Http\Controllers\adminController\addcategoryController::class, 'edit']);
+// for addcategory -  category edit
+Route::post('/category-update-data/{id}', [App\Http\Controllers\adminController\addcategoryController::class, 'update']);
+
+// Author Edit
+Route::get('/author-edit/{id}', [App\Http\Controllers\adminController\AuthorController::class, 'edit']);
+// Author Update
+Route::post('/author-update-data/{id}', [App\Http\Controllers\adminController\AuthorController::class, 'update']);
+// Author delete
+Route::get('/author-delete/{id}', [App\Http\Controllers\adminController\AuthorController::class, 'delete']);

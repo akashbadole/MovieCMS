@@ -10,7 +10,7 @@
                     <div class="dash-right">
                         <div class="dash-header">
                           <div class="dash-title">
-                              <h1>Update Add Category</h1>
+                              <h1>Update Author name</h1>
                           </div>
                         </div>
                         <div class="blog-form">
@@ -18,16 +18,15 @@
                           <div class="alert alert-success">{{ session('success') }}</div>
                         @endif
                           
-
-                          <form action="{{url('category-update-data/'.$allCategory[0]->category_id)}}" method="post">
+                          <form action="{{url('author-update-data/'.$AuthorData[0]->author_id)}}" method="post">
                             @csrf
-                         
                             <div class="form-group form-row">
-                                <label class="col-md-3">Blog Title <span class="required">*</span></label>
+                                <label class="col-md-3">Author Name <span class="required">*</span></label>
                                 <div class="col-md-9">
-                                  <input type="text" value="{{ $allCategory[0]->category }}" name="category_title" class="form-control" placeholder="Title" required>
+                                  <input type="text" value="{{ $AuthorData[0]->authorName }}" name="authorName" class="form-control" placeholder="Title" required>
                                 </div>
                             </div>
+
                            
                             <div class="form-group form-row">
                                 <label class="col-md-3"></label>

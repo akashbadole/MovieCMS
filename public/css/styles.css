@@ -1,5 +1,5 @@
 h1 {font-size: 2.4rem;margin-bottom: 30px;}
-.bg-blue {background-color:#007EDB;}
+.bg-blue {background-color:#0B314E;}
 .navbar-brand img { height:30px; }
 .navbar-dark .navbar-nav .nav-link {color:#fff;}
 .navbar-dark .navbar-nav .active .nav-link {color:#fff;}
@@ -24,13 +24,13 @@ h1 {font-size: 2.4rem;margin-bottom: 30px;}
 .rb-box-desc p {color:#666;}
 .rb-box {margin-bottom:10px;}
 .recent-post a:hover {text-decoration: none;}
-.recent-post a:hover h4 {color:#007EDB;}
+.recent-post a:hover h4 {color:#0B314E;}
 
 .categories {margin-top:20px;}
 .categories ul {padding:0;margin:0; list-style: none;}
 .categories ul li { border-bottom:1px dotted #ccc; padding:5px 0px;}
 .categories ul li a {color:#333; display: block;}
-.categories ul li a:hover {color:#007EDB; text-decoration: none;}
+.categories ul li a:hover {color:#0B314E; text-decoration: none;}
 .body-content { min-height:380px; }
 .error-404 { text-align: center; }
 .error-404 h1{ font-size:10em; }
@@ -43,13 +43,13 @@ h1 {font-size: 2.4rem;margin-bottom: 30px;}
 .dash-left ul {padding:0;margin:0;list-style:none;}
 .dash-left ul li { background-color: #f1f1f1; margin-bottom:5px;}
 .dash-left ul li a {color:#333; padding:5px 15px; display: block;}
-.dash-left ul li:hover a {background-color:#007EDB; text-decoration: none; color:#fff;}
-.dash-left ul li a.active {background-color:#007EDB; color:#fff;}
+.dash-left ul li:hover a {background-color:#0B314E; text-decoration: none; color:#fff;}
+.dash-left ul li a.active {background-color:#0B314E; color:#fff;}
 .dash-header {display:flex; justify-content: space-between;}
 .table img { width:80px; }
 .action a {margin:0 5px;}
 
-footer {background-color: #000;color:#fff; padding:20px;}
+footer {background-color: #0B314E;color:#fff; padding:20px;}
 
 /*validation*/
 .ng-valid[required], .ng-valid.required {border: 1px solid #42A948;}

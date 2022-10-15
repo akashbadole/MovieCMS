@@ -1,7 +1,7 @@
 <footer>
     	<div class="container">
     		<div class="copyright">
-    			<div>Designed by Abcd</div>
+    			<div>Designed By Open Source Community &hearts;</div>
     		</div>
     	</div>
     </footer>

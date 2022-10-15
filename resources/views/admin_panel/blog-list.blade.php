@@ -49,9 +49,9 @@
                             @endforeach
     
                         </table>
-                        <div>{{ $blogData->links() }}</div>
+                        <div align="center" style="margin:auto">{{ $blogData->links() }}</div>
                         <style>
-                           svg .w-5 .h-5{
+                          .w-5 {
                                 display: none !important;
                             }
                         </style>

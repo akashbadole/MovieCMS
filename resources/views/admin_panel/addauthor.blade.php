@@ -17,7 +17,10 @@
                         <div class="blog-form">
                           @if(session('success'))
                           <div class="alert alert-success">{{session('success')}}</div>
-                        @endif
+                          @endif
+                          @if(session('danger'))
+                          <div class="alert alert-danger">{{session('danger')}}</div>
+                          @endif
                           <form action="{{ url('addauthor-data')}}" method="post">
                             @csrf
                             <div class="form-group form-row">
@@ -34,6 +37,16 @@
                                 </div>
                             </div>
                           </form>
+                        </div>
+                        <hr />
+                        <div>
+                          <h2>Author Data</h2>
+                          <ul>
+                          @foreach ($authorData as $author )
+                            <li class="mt-4 mb-4">{{$author->authorName}} <span>   <a href="{{url('author-edit/'.$author->author_id)}}" class="btn btn-primary">Edit</a> | 
+                              <a href="{{url('author-delete/'.$author->author_id)}}" class="btn btn-danger">Delete</a></span></li>
+                          @endforeach
+                        </ul>
                         </div>
                     </div>   
                 </div>

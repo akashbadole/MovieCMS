@@ -5,7 +5,7 @@ namespace App\Http\Controllers\adminController;
 use Illuminate\Http\Request;
 use App\Models\addcategory;
 // for url calling 
-use Illuminate\Support\Facades\URL;
+// use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB; // for delete 
  
 use League\CommonMark\Reference\Reference;
@@ -47,5 +47,14 @@ class addcategoryController extends Controller
         $categoryData = addcategory::all();
         $categoryDataAdding = DB::table('addcategories')->where('category_id', $id)->get();
         return view('admin_panel.editcategory',["allCategory"=>$categoryDataAdding, 'categoryData'=>$categoryData]);
+    }
+
+    public function update(Request $req, $id){
+        // echo "<pre> ";
+        // print_r($_POST);
+        DB::table('addcategories')
+            ->where('category_id', $id)
+            ->update(['Category' => $req->input('category_title')]);
+        return redirect('/addcategory')->with('success', 'Category Updated Successfully');
     }
 }
