@@ -13,12 +13,12 @@ class userController extends Controller
         if($category_name=="")
         {
             $categoryData = Addcategory::All();
-            $allData = DB::table('addblogs')->where('blog_category', $category_name)->get();
+            $allData = DB::table('addblogs')->get();
             return view('user_panel.index', ['menu'=>$categoryData, 'allblogdata'=>$allData]);
         }
         else{
             $categoryData = Addcategory::All();
-            $allData = DB::table('addblogs')->get();
+            $allData = DB::table('addblogs')->where('blog_category', $category_name)->get();
             return view('user_panel.index', ['menu'=>$categoryData, 'allblogdata'=>$allData]);
         }
     }
