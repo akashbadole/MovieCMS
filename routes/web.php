@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 //     return(view('admin_panel.addcategory'));
 // }); 
 
-Route::get('/', [App\Http\Controllers\adminController\HomeController::class, 'index']);
+Route::get('/admin', [App\Http\Controllers\adminController\HomeController::class, 'index']);
 Route::get('/blog-list', [App\Http\Controllers\adminController\bloglist::class, 'index']);
 Route::get('/addblog', [App\Http\Controllers\adminController\addblogController::class, 'index']);
 Route::post('/add-blog-data', [App\Http\Controllers\adminController\addblogController::class, 'addblog']);
@@ -64,3 +64,7 @@ Route::get('/author-edit/{id}', [App\Http\Controllers\adminController\AuthorCont
 Route::post('/author-update-data/{id}', [App\Http\Controllers\adminController\AuthorController::class, 'update']);
 // Author delete
 Route::get('/author-delete/{id}', [App\Http\Controllers\adminController\AuthorController::class, 'delete']);
+
+
+// user Controllers - index 
+Route::get('/', [App\Http\Controllers\userController\userController::class, 'index']);
