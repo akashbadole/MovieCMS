@@ -30,7 +30,7 @@
                     <p>By <span>{{$blogData->blog_author}}</span> on <span>{{$blogData->created_at}}</span></p>
                     <p>{{ Str::limit($blogData->blog_desc, 25)}}</p>
                     {{-- {{ Str::limit($data_value->b_desc, 20) }} form string limitation --}}
-                    <a href="{{ url('movie_detail/'.$blogData->blog_id) }}" class="btn btn-danger">Read more...</a>
+                    <a href="{{ url('movie_detail/'.$blogData->blog_id) }}" class="btn btn-primary">Read more...</a>
                 </div>
             </div>
                 @endforeach

@@ -18,8 +18,9 @@
                             
                         </div>
     				</div>
+                    <h4>Comments</h4>
 
-                    {{-- <form action="{{ url('add-comment/'.$blog_data[0]->blog_id) }}" method="post">
+                    <form action="{{ url('add-comment/'.$blog_data[0]->blog_id) }}" method="post">
                         @csrf
                             <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">User name</label>
@@ -41,82 +42,34 @@
                             <div class="mb-3">
                                     <input type="submit" value="Add Cooment" name="add_comment" class="btn btn-success">
                             </div>
-                    </form> --}}
+                    </form>
     			</div>
     			<div class="col-md-4">
     				<div class="blog-right">
                         <div class="right-widget recent-post">
-                            <h3>Recent Blogs</h3>
-                            <a href="#">
+                            <h3>Recent Movies Blogs</h3>
+                            @foreach($all_blog_data as $blogdata)
+                            <a href="{{ url('movie_detail/'.$blogdata->blog_id) }}">
                                 <div class="rb-box">
                                     <div class="rb-box-img">
-                                        <img src="assets/images/img1.jpg" alt="blog1" />
+                                        <img src="{{$blogdata->blog_pic}}" alt="{{$blogdata->blog_title}}" />
                                     </div>
                                     <div class="rb-box-desc">
-                                        <h4>Sample blog post 1</h4>
-                                        <p>Posted On: October 22, 2018</p>
+                                        <h4>{{$blogdata->blog_title}}</h4>
+                                        <p>Posted By: {{$blogdata->blog_author}}</p>
+                                        <p>Posted On: {{$blogdata->created_at}}</p>
                                     </div>
                                 </div>
                             </a>
-                            <a href="#">
-                                <div class="rb-box">
-                                    <div class="rb-box-img">
-                                        <img src="assets/images/img2.jpg" alt="blog1" />
-                                    </div>
-                                    <div class="rb-box-desc">
-                                        <h4>Sample blog post 2</h4>
-                                        <p>Posted On: October 22, 2018</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="rb-box">
-                                    <div class="rb-box-img">
-                                        <img src="assets/images/img3.jpg" alt="blog1" />
-                                    </div>
-                                    <div class="rb-box-desc">
-                                        <h4>Sample blog post 3</h4>
-                                        <p>Posted On: October 22, 2018</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="rb-box">
-                                    <div class="rb-box-img">
-                                        <img src="assets/images/img4.jpg" alt="blog1" />
-                                    </div>
-                                    <div class="rb-box-desc">
-                                        <h4>Sample blog post 4</h4>
-                                        <p>Posted On: October 22, 2018</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="rb-box">
-                                    <div class="rb-box-img">
-                                        <img src="assets/images/img5.jpg" alt="blog1" />
-                                    </div>
-                                    <div class="rb-box-desc">
-                                        <h4>Sample blog post 5</h4>
-                                        <p>Posted On: October 22, 2018</p>
-                                    </div>
-                                </div>
-                            </a>
+                            @endforeach
                         </div>
                          <div class="right-widget categories">
                              <h3>Categories</h3>
+                            @foreach($allcategorydetail as $allcategory)
                              <ul>
-                                <li><a href="#">Technology</a></li>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Culture</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Politics</a></li>
-                                <li><a href="#">Opinion</a></li>
-                                <li><a href="#">Science</a></li>
-                                <li><a href="#">Health</a></li>
-                                <li><a href="#">Style</a></li>
-                                <li><a href="#">Travel</a></li>
+                                <li><a href="{{URL::to('/?val='.$allcategory->category)}}">{{$allcategory->category}}</a></li>
                             </ul>
+                            @endforeach
                          </div>
     				</div>
     			</div>
