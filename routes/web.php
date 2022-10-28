@@ -68,3 +68,6 @@ Route::get('/author-delete/{id}', [App\Http\Controllers\adminController\AuthorCo
 
 // user Controllers - index 
 Route::get('/', [App\Http\Controllers\userController\userController::class, 'index']);
+
+// Movie Detail Blog Controller - single view
+Route::get('movie_detail/{id}', [App\Http\Controllers\userController\MovieDetailController::class, 'index']);

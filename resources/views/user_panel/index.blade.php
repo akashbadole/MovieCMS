@@ -26,10 +26,11 @@
                 <div class="col-md-4">
                 <div class="blog-box">
                     <img src="{{$blogData->blog_pic}}" alt="{{$blogData->blog_title}}" />
-                    <h3>{{$blogData->blog_title}}</h3>
+                    <h3>{{Str::limit($blogData->blog_title, 15)}}</h3>
                     <p>By <span>{{$blogData->blog_author}}</span> on <span>{{$blogData->created_at}}</span></p>
-                    <p>{{$blogData->blog_desc}}</p>
-                    <a href="detail.html" class="btn btn-danger">Read more...</a>
+                    <p>{{ Str::limit($blogData->blog_desc, 25)}}</p>
+                    {{-- {{ Str::limit($data_value->b_desc, 20) }} form string limitation --}}
+                    <a href="{{ url('movie_detail/'.$blogData->blog_id) }}" class="btn btn-danger">Read more...</a>
                 </div>
             </div>
                 @endforeach
