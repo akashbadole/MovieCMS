@@ -71,3 +71,7 @@ Route::get('/', [App\Http\Controllers\userController\userController::class, 'ind
 
 // Movie Detail Blog Controller - single view
 Route::get('movie_detail/{id}', [App\Http\Controllers\userController\MovieDetailController::class, 'index']);
+
+// Movie Comment Controller - single view
+Route::post('add-comment/{id}', [App\Http\Controllers\userController\CommentController::class, 'add_comment']);
+

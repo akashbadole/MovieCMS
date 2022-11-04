@@ -31,7 +31,7 @@
                                 <th>Blog Created</th>
                                 <th>Action</th>
                             </tr>
-                            @foreach ($blogData as $blogvalue)
+                            @foreach ($blogData as $blogvalue) 
                                 
                             <tr>
                                 <td>{{$blogvalue->blog_id}}</td>
@@ -39,7 +39,7 @@
                                 <td>{{$blogvalue->blog_category}}</td>
                                 <td>{{$blogvalue->blog_title}}</td>
                                 <td>{{$blogvalue->blog_author}}</td>
-                                <td>{{$blogvalue->blog_desc}}</td>
+                                <td>{{ Str::limit($blogvalue->blog_desc, 30)}}</td>
                                 <td>{{$blogvalue->created_at}}</td>
                                 <td>
                                     <a href="{{url('update-record/'.$blogvalue->blog_id)}}" class="btn btn-info btn-sm">Edit</a>

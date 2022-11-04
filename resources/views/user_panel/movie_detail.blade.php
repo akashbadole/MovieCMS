@@ -19,7 +19,11 @@
                         </div>
     				</div>
                     <h4>Comments</h4>
-
+                    <div>
+                        @if(session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                        @endif
+                    </div>
                     <form action="{{ url('add-comment/'.$blog_data[0]->blog_id) }}" method="post">
                         @csrf
                             <div class="mb-3">
@@ -40,9 +44,30 @@
                             <textarea name="comment" id="" class="form-control" placeholder="Comment" ></textarea>
                             </div>
                             <div class="mb-3">
-                                    <input type="submit" value="Add Cooment" name="add_comment" class="btn btn-success">
+                                    <input type="submit" value="Add Comment" name="add_comment" class="btn btn-success">
                             </div>
                     </form>
+
+                    <div>
+                        <h4>Latest comment</h4>
+                        @foreach($comment_data as $comments)
+                        <table class="table-responsive table-striped">
+                            <tr>
+                                <th>User Name</th>
+                                <th>Email Id</th>
+                                <th>Subject</th>
+                                <th>Comments Detail</th>
+                            </tr>
+                            <tr>
+                                <td>{{$comments->user_name}}</td>
+                                <td>{{$comments->email_id}}</td>
+                                <td>{{$comments->subject}}</td>
+                                <td>{{$comments->comment}}</td>
+                            </tr>
+
+                        </table>
+                        @endforeach
+                    </div>
     			</div>
     			<div class="col-md-4">
     				<div class="blog-right">
