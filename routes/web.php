@@ -75,3 +75,7 @@ Route::get('movie_detail/{id}', [App\Http\Controllers\userController\MovieDetail
 // Movie Comment Controller - single view
 Route::post('add-comment/{id}', [App\Http\Controllers\userController\CommentController::class, 'add_comment']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\userController\HomeController::class, 'index'])->name('home');
