@@ -78,4 +78,4 @@ Route::post('add-comment/{id}', [App\Http\Controllers\userController\CommentCont
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\userController\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
