@@ -79,3 +79,6 @@ Route::post('add-comment/{id}', [App\Http\Controllers\userController\CommentCont
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Other routes
+Route::get('/other', [App\Http\Controllers\OtherController::class, 'index']);
